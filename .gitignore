@@ -1,0 +1,8 @@
+venv/*
+*.pyc
+*.html
+*.xml
+__pycache__/
+*__pycache__/
+*/results
+*/result
