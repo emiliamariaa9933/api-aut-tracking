@@ -12,3 +12,9 @@ Gerar tracking number
     ${tracking_number}=    Generate Random String    10    [NUMBERS]
     [Return]    ${tracking_number}
     Set Test Variable    ${tracking_number}
+
+Então recebo a mensagem "${message}" na chave "${chave}"
+    [Documentation]  Verifica se a mensagem retornada pela API é a esperada conforme teste.
+    Should Be Equal As Strings  ${contrato['meta']['message']}  ${message}
+    Log  ${contrato['meta']['message']}
+    Log  ${message}

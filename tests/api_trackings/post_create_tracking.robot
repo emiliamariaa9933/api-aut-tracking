@@ -16,9 +16,16 @@ TC0002: Retornar 400 ao Criar tracking com body inválido
   Quando faço uma requisição POST no endpoint "trackings/create"
   Então deve retornar o status code "400"
 
-TC0003: Retornar 401 ao Criar tracking sem token de autenticação
+TC0003: Retornar 401 ao Criar tracking sem estar devidamente autenticado
   [Tags]  TC0003  API_tracking  EP_tracking
   [Documentation]  Teste responsável por validar a criação de um tracking sem token de autenticação, deve retornar status code 401.
   Dado que parametrizo informações da requisição ao endpoint "trackings/create" passando um body "válido" sem token de autenticação
   Quando faço uma requisição POST no endpoint "trackings/create"
   Então deve retornar o status code "401"
+
+TC0004: Retornar mensagem de erro ao Criar tracking como body inválido
+  [Tags]  TC0004  API_tracking  EP_tracking
+  [Documentation]  Teste responsável por validar a criação de um tracking com body inválido, deve retornar status code 400.
+  Dado que parametrizo informações da requisição ao endpoint "trackings/create" passando um body "inválido"
+  Quando faço uma requisição POST no endpoint "trackings/create"
+  Então recebo a mensagem "The value of courier_code is invalid." na chave "message"
